@@ -270,12 +270,12 @@ Invoke-WebRequest -Method POST -Uri "https://script.google.com/macros/s/xxxxx/ex
 
 ## ผู้ดูแล
 
-- ทีมพัฒนา: _ใส่ชื่อทีม/องค์กรของคุณ_  
-- ติดต่อ: _อีเมล/เว็บไซต์/เบอร์โทร (ถ้ามี)_
+- ทีมพัฒนา: _Thanakrit Sricharung_  
+- ติดต่อ: _thanakrit.sr@mail.wu.ac.th_
 
 ---
 
 ### ภาคผนวก
 
-- เอกสาร Data Dictionary (ฉบับพิมพ์สวย): `docs/StressCheck_Data_Dictionary.html`  
-  แนะนำเปิดไฟล์นี้แล้ว **Print → Save as PDF** เพื่อส่งลูกค้า
+- เอกสาร Data Dictionary : `docs/StressCheck_Data_Dictionary.html`  
+  
