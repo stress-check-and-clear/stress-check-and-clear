@@ -1,6 +1,6 @@
 // ============ CONFIG ============
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfLXI7a3w8HBYE8C3WWrARwLc-2Xxf-F3sJBW2gGLWQ2RbNhA/viewform?embedded=true";
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxli2DYaanDFg8nqzzURAOHJDEMD1WK-bTyPBGtIfgYHHTXf0Mu2SJ-1kZ1egiH-JKU/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwU_Euf0ztbHNBg1OXClFUJvx_vYNG0h_E2qf5_c-ASLvPRRKbDGkmaZ1_6p3SHE4Al/exec";
 
 // ============ STATE ============
 const state = {
@@ -600,3 +600,4 @@ document.getElementById("restart").addEventListener("click", ()=>{
 
 // ============ Init ============
 setupGameTabs();
+
