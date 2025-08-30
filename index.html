@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="th">
 <head>
   <meta charset="utf-8" />
@@ -23,7 +23,7 @@
   <div class="wrap">
     <header aria-label="หัวเว็บ">
       <div class="logo-img">
-        <img src="https://media.discordapp.net/attachments/798105648168304643/1410673960885948486/450fbb86-8c43-4558-9c59-3950968fa576.jpg?ex=68b1e001&is=68b08e81&hm=e7ef95159da014f6aee2b269261963eb491283cb788dabc4e6cfbf1c670573fa&=&format=webp" alt="โลโก้สุขภาพจิต" />
+        <img src="https://media.discordapp.net/attachments/798105648168304643/1410673960885948486/450fbb86-8c43-4558-9c59-3950968fa576.jpg?ex=68b3da41&is=68b288c1&hm=526801ae91b9c5b7b8a935c7d7c13fdaccdeead02cb5fdeff34ac033f8b4aa8e&=&format=webp" alt="โลโก้สุขภาพจิต" />
       </div>
       <div>
         <h1>แบบประเมินความเครียด (SPST-20) • Stress check and clear</h1>
@@ -87,9 +87,7 @@
         <p class="pill">แบบประเมิน 20 ข้อ</p>
         <div class="result">
           <strong>คำแนะนำการตอบ</strong>
-          <div class="legend" style="margin-top:8px">
-            1 = ไม่รู้สึกเครียด • 2 = เครียดเล็กน้อย • 3 = เครียดปานกลาง • 4 = เครียดมาก • 5 = เครียดมากที่สุด
-          </div>
+          <div class="legend" style="margin-top:8px">1 = ไม่รู้สึกเครียด • 2 = เครียดเล็กน้อย • 3 = เครียดปานกลาง • 4 = เครียดมาก • 5 = เครียดมากที่สุด</div>
           <div class="muted small">กรุณาตอบให้ครบทั้ง 20 ข้อ</div>
         </div>
         <div id="questions" class="grid"></div>
@@ -133,7 +131,6 @@
             <div>วิดีโอผ่อนคลาย</div>
           </button>
         </div>
-
         <div class="btns">
           <button class="subtle" data-nav="back">ย้อนกลับ</button>
           <button class="primary" id="goChoice" disabled>ถัดไป</button>
@@ -147,15 +144,41 @@
         <div id="gameTabs" class="btns hide" style="justify-content:center;margin-top:0">
           <button class="subtle" data-game-tab="focus">เกมโฟกัสสายตา</button>
           <button class="subtle" data-game-tab="memory">เกมจับคู่ภาพ</button>
+          <!-- [WATER SORT] ปุ่มแท็บใหม่ -->
+          <button class="subtle" data-game-tab="water">Water Sort Puzzle</button>
         </div>
 
         <div id="methodPane"></div>
+
         <div id="focusPane" class="hide"></div>
 
         <div id="memoryPane" class="hide">
           <h3 class="mg-top">เกมจับคู่ภาพ (Memory)</h3>
           <div id="matchGrid"></div>
           <div class="btns"><button class="ghost" id="resetMemory">เริ่มใหม่ (เกมจับคู่)</button></div>
+        </div>
+
+        <!-- [WATER SORT] พื้นที่เกมใหม่ -->
+        <div id="waterPane" class="hide">
+          <h3 class="mg-top">Water Sort Puzzle</h3>
+          <div class="result" id="waterHud" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:12px">
+            <label>ความยาก:
+              <select id="waterDiff">
+                <option value="easy">ง่าย</option>
+                <option value="medium">ปานกลาง</option>
+                <option value="insane">ยากสุดๆ</option>
+              </select>
+            </label>
+            <span class="muted">ด่าน: <strong id="waterLevel">1</strong></span>
+            <span class="muted">เวลา: <strong id="waterTime">00:00</strong></span>
+            <span class="muted">จำนวนครั้งที่เท: <strong id="waterMoves">0</strong></span>
+            <div class="btns" style="margin:0">
+              <button class="ghost" id="waterStart">เริ่มเล่น</button>
+              <button class="subtle" id="waterReset">รีเซ็ต</button>
+              <button class="primary" id="waterNext">ด่านถัดไป</button>
+            </div>
+          </div>
+          <div id="waterBoard" class="water-board"></div>
         </div>
 
         <div id="gameWarn" class="result warn hide" role="alert" aria-live="polite" style="margin-top:12px">
@@ -185,15 +208,13 @@
         <div class="form-embed">
           <iframe id="gform" title="Google Form" loading="lazy"></iframe>
         </div>
-
         <div class="result" style="margin-top:12px">
           <label class="confirm-line">
             <input type="checkbox" id="formDoneChk" />
             <span>ฉันได้กรอกและกดส่งแบบฟอร์มเรียบร้อยแล้ว</span>
           </label>
-          <div class="muted small">หมายเหตุ: ระบบไม่สามารถตรวจจับการส่งใน iframe ได้ ป็นนโยบายด้านความปลอดภัยจาก Google จึงใช้การยืนยันนี้ โปรดตอบตามความเป็นจริง</div>
+          <div class="muted small">หมายเหตุ: ระบบไม่สามารถตรวจจับการส่งใน iframe ได้ (นโยบายความปลอดภัยของ Google) ดังนั้นกรุณาทำแบบฟอร์มให้ครบถ้วนก่อนการกดยืนยัน</div>
         </div>
-
         <div class="btns">
           <button class="subtle" data-nav="back">ย้อนกลับ</button>
           <button class="primary" data-nav="next" id="formNextBtn" disabled>เสร็จสิ้น</button>
@@ -213,7 +234,7 @@
       </section>
     </div>
 
-    <!-- Modal รวม: ใช้ทั้งแจ้งเตือน/แสดงจบเกม -->
+    <!-- Modal รวม -->
     <div id="ggModal" class="modal hide" role="dialog" aria-modal="true" aria-labelledby="ggTitle">
       <div class="modal-card">
         <div class="modal-emoji">🎉</div>
